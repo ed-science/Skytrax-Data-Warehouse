@@ -32,4 +32,4 @@ class DataQualityOperator(BaseOperator):
             records = redshift.get_records(sql)
             self.log.info(records)
             if not operator(records[0][0], result):
-                raise ValueError(f"Data quality check failed.")
+                raise ValueError("Data quality check failed.")
